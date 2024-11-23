@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="test_automation" verbose="1">
+    <test name="selenium_grid">
+        <classes>
+            <class name="automation_test.org.mortgage_calculator.parameterized.CalculateRealAprRateParameterized"/>
+            <class name="automation_test.org.mortgage_calculator.parameterized.CalculateMortgageRateParameterized"/>
+        </classes>
+    </test>
+</suite>
