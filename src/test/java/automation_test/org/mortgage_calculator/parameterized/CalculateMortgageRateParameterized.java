@@ -1,8 +1,6 @@
 package automation_test.org.mortgage_calculator.parameterized;
 
 import automation_test.BaseClass;
-import command_providers.ActOn;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import page_objects.Home;
 import utilities_qatek.DateUtils;
@@ -34,11 +32,5 @@ public class CalculateMortgageRateParameterized extends BaseClass {
                     .clickCalculateButton()
                     .validateTotalMonthlyPayment(rs.getString("totalmonthlypayment"));
         }
-    }
-
-
-    @AfterMethod
-    public void browserCleanup(){
-        ActOn.browser(driver).closeBrowser();
     }
 }
