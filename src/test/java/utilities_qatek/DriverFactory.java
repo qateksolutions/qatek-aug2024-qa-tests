@@ -37,7 +37,6 @@ public class DriverFactory {
 
         if (environment.equals("remote") && browser.equals("chrome")) {
             ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.addArguments("--remote-allow-origins=*");
             LOGGER.debug("Executing automation scripts in: " + gridUrl + " in: " + browser);
             return new RemoteWebDriver(gridUrl, chromeOptions);
         } else if (environment.equals("remote") && browser.equals("firefox")) {
@@ -51,11 +50,10 @@ public class DriverFactory {
         } else {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--remote-allow-origins=*");
+            LOGGER.debug("Executing automation scripts in: " + environment + " in: " + browser);
             return new ChromeDriver(options);
         }
-    }
-    );
+    });
 
     public WebDriver getDriver(){
         return driver.get();
